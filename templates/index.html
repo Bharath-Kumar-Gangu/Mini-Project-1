@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+        <html >
+        <!--From https://codepen.io/frytyler/pen/EGdtg-->
+        <head>
+          <meta charset="UTF-8">
+          <title>Diabetes Type-2 Predictor</title>
+          <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+          
+        </head>
+        
+        <body>
+         <div class="login">
+          <br>
+          <br>
+          {{ prediction_text }}
+            <h1>Diabetes Type-2 Predictor</h1>
+        
+             
+            <form action="{{ url_for('predict')}}"method="post">
+                <input type="text" name="Glucose" placeholder="Glucose" required="required" />
+                <input type="text" name="BMI" placeholder="BMI" required="required" />
+                <input type="text" name="Age" placeholder="Age" required="required" />
+                <input type="text" name="Insulin" placeholder="Insulin" required="required" />
+                <input type="text" name="BP" placeholder="BP" required="required" />
+                <input type="text" name="Skin_thickness" placeholder="Skin_thickness" required="required" />
+                <input type="text" name="Pregnancies" placeholder="Pregnancies" required="required" />
+                <input type="text" name="Diabetes_pedigree_function" placeholder="Diabetes_pedigree_function" required="required" />
+
+        
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+        
+         </div>
+        
+        
+        </body>
+        </html>
